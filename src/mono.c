@@ -15,7 +15,11 @@ main(int argc, char *argv[])
 
     ff_write_header(width, height);
 
-    for (i = 0; i < width; i++)
-        for (j = 0; j < height; j++)
+    for (j = 0; j < height; j++)
+        for (i = 0; i < width; i++) {
+            p.r = i % 255;
+            p.g = j % 255;
             ff_write_rgba(p);
+            // coordinate of pixel = (i, j)
+        }
 }

@@ -50,7 +50,7 @@ ff_write_rgba(pixel p)
     q[2] = p.b;
     q[3] = p.a;
 
-    if (fwrite(q, sizeof(uint16_t), 4, stdout) != 4)
+    if (fwrite(&q, sizeof(uint16_t), 4, stdout) != 4)
         return 1;
 
     return 0;
