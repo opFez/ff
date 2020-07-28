@@ -35,7 +35,7 @@ ff_write_header(uint32_t width, uint32_t height)
     printf("farbfeld");
 
     w = htonl(width);   // farbfeld requires this htonl stuff
-    h = htonl(height);  //i think its something to do with endian?
+    h = htonl(height);  // i think its something to do with endian?
 
     fwrite(&w, sizeof(w), 1, stdout);
     fwrite(&h, sizeof(h), 1, stdout);
