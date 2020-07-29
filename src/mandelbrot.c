@@ -8,6 +8,8 @@
 int
 main(int argc, char *argv[])
 {
+    assert(argc == 3);
+
     uint32_t x, y, width, height, iter, rgb;
     double complex c;
     double complex z;
