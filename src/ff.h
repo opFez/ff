@@ -55,3 +55,46 @@ ff_write_rgba(pixel p)
 
     return 0;
 }
+
+uint32_t
+ff_get_width(char *f)
+{
+    FILE *a;
+    unsigned char buf[4];
+    uint32_t width;
+    int i;
+    a = fopen(f, "r");
+
+    fseek(a, 8, 0);
+    for (i = 0; i < 4; i++) {
+        buf[i] = fgetc(a);
+    }
+
+    fclose(a);
+
+    width = (buf[3] << 24) | (buf[2] << 16) | (buf[1] << 8) | (buf[0]);
+
+    return ntohl(width);
+    // ntohl ser ut til å gjøre motsatte av htonl, brukt til å skrive fila
+}
+
+uint32_t
+ff_get_height(char *f)
+{
+    FILE *a;
+    unsigned char buf[4];
+    uint32_t height;
+    int i;
+    a = fopen(f, "r");
+
+    fseek(a, 12, 0);
+    for (i = 0; i < 4; i++) {
+        buf[i] = fgetc(a);
+    }
+
+    fclose(a);
+
+    height = (buf[3] << 24) | (buf[2] << 16) | (buf[1] << 8) | (buf[0]);
+
+    return ntohl(height);
+}
