@@ -1,2 +1,3 @@
-put ff.h in your source directory to use it, examples are in the examples directory.
-lel is a program to view your farbfeld files.
+ff.h is the single-header library
+In the examples directory, you can find a couple example programs regarding farbfeld files.
+All examples output to stdout, so you have to pipe the output in order to create an image file.
