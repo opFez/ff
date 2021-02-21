@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <assert.h>
-#include "ff.h"
+#include "../ff.h"
 
 int
 main(int argc, char *argv[])

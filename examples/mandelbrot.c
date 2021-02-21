@@ -3,7 +3,7 @@
 
 #include <math.h>
 #include <complex.h>
-#include "ff.h"
+#include "../ff.h"
 
 int
 main(int argc, char *argv[])

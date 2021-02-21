@@ -1,5 +1,5 @@
 #!/bin/sh
 
-clang src/mono.c -o bin/mono
-clang src/is_farbfeld.c -o bin/is_farbfeld
-clang src/mandelbrot.c -o bin/mandelbrot -lm -g
+gcc examples/mono.c -o mono
+gcc examples/is_farbfeld.c -o is_farbfeld
+gcc examples/mandelbrot.c -o mandelbrot -lm -g
